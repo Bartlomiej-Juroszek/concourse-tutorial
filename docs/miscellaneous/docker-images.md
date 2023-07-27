@@ -44,7 +44,7 @@ resources:
     branch: develop
 
 - name: hello-world-docker-image
-  type: docker-image
+  type: registry-image
   source:
     email: ((docker-hub-email))
     username: ((docker-hub-username))
@@ -107,7 +107,7 @@ We can now use the Docker image as the base image for tasks.
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: registry-image
         source:
           repository: ((docker-hub-username))/concourse-tutorial-hello-world
       run:
